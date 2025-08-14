@@ -1,0 +1,256 @@
+.all-filings {
+  background: #fff;
+  padding: 40px 50px 50px 50px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  font-family: "Inter", sans-serif;
+  color: #1a1a1a;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+.export-btn {
+  background: #1e293b;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.export-btn:hover {
+  background: #334155;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 30px;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tab .count {
+  background: #e2e8f0;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.tab.active {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.tab.active .count {
+  background: #c7d2fe;
+  color: #3730a3;
+}
+
+.search-container {
+  margin-bottom: 30px;
+  position: relative;
+  max-width: 320px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #334155;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #6366f1;
+}
+
+.filings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.filings-table th,
+.filings-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.filings-table th {
+  background-color: #f8fafc;
+  font-weight: 700;
+  color: #475569;
+  font-size: 0.85rem;
+}
+
+.filings-table td strong {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.email {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.itr-badge {
+  display: inline-block;
+  background: #f3f4f6;
+  color: #334155;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  border: 1px solid #cbd5e1;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  min-width: 110px;
+}
+
+.status-badge.assigned {
+  background-color: #3b82f6; /* blue */
+}
+
+.status-badge.waiting {
+  background-color: #f97316; /* orange */
+}
+
+.status-badge.completed {
+  background-color: #22c55e; /* green */
+}
+
+.status-badge.inprogress {
+  background-color: #a78bfa; /* purple */
+}
+
+.progress-bar-container {
+  position: relative;
+  background: #e0e0e0;
+  border-radius: 12px;
+  height: 12px;
+  width: 100px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #1e293b;
+  border-radius: 12px;
+  transition: width 0.3s ease;
+}
+
+.progress-percent {
+  font-size: 0.8rem;
+  color: #475569;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.view-btn {
+  background-color: #1e293b;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+}
+
+.view-btn:hover {
+  background-color: #334155;
+}
+
+.no-data {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
+  font-style: italic;
+}
+
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.page-btn {
+  background: #f1f5f9;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.page-btn.active {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.page-btn:hover:not(.active) {
+  background: #cbd5e1;
+}

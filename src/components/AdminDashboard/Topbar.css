@@ -1,0 +1,104 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 30px;
+  border-bottom: 1px solid #dee2e6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 240px;
+  right: 0;
+  height: 60px;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.topbar-left {
+  width: 240px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #212529;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  justify-content: center;
+}
+
+.topbar-center {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #212529;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 100%;
+  justify-content: center;
+}
+
+.dropdown-icon {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #495057;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.icon-btn:hover {
+  color: #212529;
+}
+
+.topbar-top {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 30px;
+  background-color: #fff;
+  border-bottom: none;
+  position: fixed;
+  top: 60px;
+  right: 30px;
+  left: 240px;
+  height: 50px;
+  align-items: center;
+  z-index: 1000;
+}
+
+.generate-report-btn {
+  background-color: #1f2a6b;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(31, 42, 107, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.generate-report-btn:hover {
+  background-color: #16225a;
+}

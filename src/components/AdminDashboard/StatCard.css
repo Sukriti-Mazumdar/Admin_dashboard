@@ -1,0 +1,28 @@
+.stat-card {
+  flex: 1;
+  background: white;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.stat-title {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.stat-change {
+  font-size: 0.8rem;
+  color: #28a745;
+}
+
+.stat-change.negative {
+  color: #dc3545;
+}

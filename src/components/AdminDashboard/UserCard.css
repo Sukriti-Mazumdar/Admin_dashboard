@@ -1,0 +1,85 @@
+.user-card {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: 1px solid #ced4da;
+  margin-bottom: 15px;
+}
+
+.user-card:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.user-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 5px;
+  color: #212529;
+}
+
+.user-email,
+.user-phone {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+.user-price-filing {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.price {
+  font-weight: 700;
+  color: #2a8f4f;
+}
+
+.filing-type {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.user-assign {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ced4da;
+}
+
+.user-assign label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #495057;
+}
+
+.user-assign select {
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.user-assign select:hover {
+  border-color: #2a4bff;
+}
