@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import "./Sidebar.css";
 
-function Sidebar({ onMenuClick, activePage }) {
+function Sidebar({ onMenuClick, activePage, onLogout }) {
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
@@ -45,7 +45,7 @@ function Sidebar({ onMenuClick, activePage }) {
         </button>
       </nav>
 
-      <button className="logout-btn">
+      <button className="logout-btn" onClick={onLogout}>
         <FaSignOutAlt className="icon" /> Logout
       </button>
     </aside>

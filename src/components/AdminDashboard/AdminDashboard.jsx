@@ -3,19 +3,20 @@ import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 import RevenueChart from "./RevenueChart";
 import UserCard from "./UserCard";
+import Settings from "./Settings";
 import AllFilings from "../AllFilings";
-import Operators from "../Operators"; // ✅ NEW IMPORT
+import Operators from "../Operators"; 
 
 import { FaUser, FaUsers, FaClock, FaFileAlt } from "react-icons/fa";
 import "./AdminDashboard.css";
 
-function AdminDashboard() {
+function AdminDashboard({ onLogout }) {
   const [activePage, setActivePage] = useState("dashboard");
 
   return (
     <div className="page-wrap">
       {/* Sidebar */}
-      <Sidebar onMenuClick={setActivePage} activePage={activePage} />
+      <Sidebar onMenuClick={setActivePage} activePage={activePage} onLogout={onLogout} />
 
       {/* Main Content */}
       <div className="main">
@@ -26,6 +27,17 @@ function AdminDashboard() {
         <div className="content">
           {activePage === "dashboard" && (
             <>
+              {/* Dashboard Header */}
+              <div className="dashboard-header">
+                <div className="dashboard-title">
+                  <h1>Admin Dashboard</h1>
+                  <p>Monitor and manage your tax filing operations</p>
+                </div>
+                <button className="generate-report-btn">
+                  Generate Report
+                </button>
+              </div>
+
               {/* Summary Cards */}
               <div className="summary-cards">
                 <div className="summary-card blue">
@@ -109,7 +121,9 @@ function AdminDashboard() {
 
           {activePage === "allFilings" && <AllFilings />}
 
-          {activePage === "operators" && <Operators />} 
+          {activePage === "operators" && <Operators />}
+
+          {activePage === "settings" && <Settings />}
         </div>
       </div>
     </div>

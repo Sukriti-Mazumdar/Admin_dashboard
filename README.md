@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# Admin Dashboard with Login Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and includes a modern admin dashboard with a beautiful login page.
+
+## 🚀 Quick Start - View Login Page
+
+### Option 1: Instant Preview (No Setup Required)
+1. **Open `login-preview.html`** in the admin-dashboard folder
+2. **Double-click** the file to open in your browser
+3. **See the exact design** immediately!
+
+### Option 2: Full Application
+1. Run `npm start` in the admin-dashboard directory
+2. Open [http://localhost:3000](http://localhost:3000) in your browser
+3. The login page will appear first, then navigate to the dashboard after login
+
+## ✨ Features
+
+- **Modern Login Page**: Exact replica of the reference design
+- **Admin Dashboard**: Complete dashboard with charts, user management, and more
+- **Responsive Design**: Works on all devices
+- **Interactive Elements**: Form validation, password toggle, social login buttons
 
 ## Available Scripts
 
@@ -68,3 +87,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## 🔧 Troubleshooting
+
+### PowerShell Execution Policy Error
+If you get an error when running `npm start`:
+```
+npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system.
+```
+
+**Solution:**
+1. Open PowerShell as Administrator
+2. Run: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+3. Try `npm start` again
+
+### Alternative: Use the Preview File
+If you continue having issues with npm, simply open `login-preview.html` in your browser to see the login page design immediately.
