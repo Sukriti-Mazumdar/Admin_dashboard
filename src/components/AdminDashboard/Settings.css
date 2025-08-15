@@ -1,8 +1,10 @@
+/* General Settings Container */
 .settings-container {
-  padding: 20px;
+  padding: 30px 40px;
   font-family: "Inter", sans-serif;
 }
 
+/* Header Section */
 .settings-header {
   display: flex;
   justify-content: space-between;
@@ -12,27 +14,32 @@
 .settings-header h2 {
   font-size: 20px;
   font-weight: 700;
+  margin: 0;
 }
 
 .settings-header p {
   font-size: 14px;
   color: #666;
+  margin: 2px 0 0;
 }
 
+/* Save Button */
 .save-btn {
   background-color: #0b0b3b;
   color: white;
   border: none;
   padding: 8px 14px;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .save-btn:hover {
   background-color: #000028;
 }
 
+/* Tabs Container */
 .tabs {
   display: flex;
   background: #f5f6fa;
@@ -49,6 +56,8 @@
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
 }
 
 .tab.active {
@@ -57,26 +66,30 @@
   box-shadow: 0 0 0 1px #ddd;
 }
 
+/* Card Container */
 .card {
   background: white;
   border-radius: 8px;
-  padding: 20px;
+  padding: 30px 40px;
   margin-top: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Card Header */
 .card h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
+/* Grid for Preferences & Inputs */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 30px;
 }
 
+/* Preference Blocks */
 .preference {
   display: flex;
   justify-content: space-between;
@@ -89,11 +102,13 @@
 .preference h4 {
   font-size: 14px;
   font-weight: 600;
+  margin: 0 0 4px 0;
 }
 
 .preference p {
   font-size: 12px;
   color: #888;
+  margin: 0;
 }
 
 /* Toggle Switch */
@@ -140,4 +155,167 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(20px);
+}
+
+/* === Tax Slabs Section === */
+
+/* Regime Toggle Buttons */
+.toggle-btn {
+  background: #f0f3f7;
+  color: #222;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: -4px;
+  transition: background 0.2s;
+  min-width: 100px;
+}
+
+.toggle-btn.active {
+  background: #fff;
+  box-shadow: 0 0 0 1px #e6e8eb;
+  color: #0b0b3b;
+  z-index: 1;
+}
+
+.toggle-btn:not(:first-child) {
+  border-radius: 0 6px 6px 0;
+}
+
+/* Add Tax Slab Button */
+.add-btn {
+  background-color: #0b0b3b;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  user-select: none;
+}
+
+.add-btn:hover {
+  background-color: #000028;
+}
+
+/* Tax Table */
+.tax-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.tax-table th,
+.tax-table td {
+  padding: 14px 10px;
+  text-align: left;
+  border-bottom: 1px solid #f0f3f7;
+}
+
+.tax-table th {
+  background: #f5f6fa;
+  font-weight: 700;
+  color: #222;
+  font-size: 13px;
+}
+
+.tax-table td {
+  color: #444;
+}
+
+.tax-table td a {
+  color: #0b0b3b;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: none;
+  border: none;
+  color: #e02b2b;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 9px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  text-decoration: underline;
+  background: #ffeeee;
+}
+
+
+
+/* Admin Roles Grid for Inputs */
+.adminroles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 30px;
+}
+
+/* Labels */
+.card label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 7px;
+  color: #232445;
+}
+
+/* Inputs */
+.card input[type="text"] {
+  width: 100%;
+  font-size: 16px;
+  padding: 20px 32px;
+  border: 1px solid #e5e7ef;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  outline: none;
+  color: #2c2c2c;
+  background: #fff;
+  transition: border-color 0.2s;
+  max-width: 420px;
+}
+
+/* Disabled Input Styling */
+.card input[disabled] {
+  background: #ececec;
+  color: #888;
+  border: none;
+  cursor: not-allowed;
+}
+
+/* Permission Messages under disabled inputs */
+.input-permission-msg {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+
+@media (max-width: 700px) {
+  .adminroles-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .settings-container {
+    padding: 60px;
+  }
+
+  .card {
+    padding: 60px;
+  }
 }
