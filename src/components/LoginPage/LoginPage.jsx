@@ -129,16 +129,9 @@ function LoginPage({ onLogin }) {
           </div>
         </div>
         
-        {/* Right Side - 3D Illustration */}
+        {/* Right Side */}
         <div className="illustration-section">
-          <div className="illustration-content">
-            <div className="character-3d">
-              <div className="character-head"></div>
-              <div className="character-body"></div>
-              <div className="character-arms"></div>
-              <div className="laptop"></div>
-            </div>
-          </div>
+          <img src="https://t4.ftcdn.net/jpg/14/39/07/53/360_F_1439075328_RVYpkK9a9y1E24zw0uKCDeHpoXTxUW0J.jpg" alt="Avatar Illustration" className="login-illustration" />
         </div>
       </div>
     </div>
