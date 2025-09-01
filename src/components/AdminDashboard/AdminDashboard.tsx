@@ -4,8 +4,8 @@ import Topbar from "./Topbar";
 import RevenueChart from "./RevenueChart";
 import UserCard from "./UserCard";
 import Settings from "./Settings";
-import AllFilings from "../AllFilings";
-import Operators from "../Operators"; 
+import AllFilings from "./AllFilings";
+import Operators from "./Operators"; 
 
 import { FaUser, FaUsers, FaClock, FaFileAlt } from "react-icons/fa";
 import "./AdminDashboard.css";
