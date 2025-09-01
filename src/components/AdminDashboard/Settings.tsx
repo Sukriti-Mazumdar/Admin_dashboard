@@ -2,19 +2,30 @@
 import React, { useState } from "react";
 import "./Settings.css";
 
+interface TaxSlab {
+  incomeRange: string;
+  taxRate: string;
+  surcharge: string;
+}
+
+interface Admin {
+  type: string;
+  email: string;
+}
+
 function Settings() {
   // Tab state
-  const [activeTab, setActiveTab] = useState("notifications");
+  const [activeTab, setActiveTab] = useState<string>("notifications");
 
   // Notification Preferences state
-  const [emailNotifications, setEmailNotifications] = useState(true);
-  const [smsNotifications, setSmsNotifications] = useState(false);
-  const [pushNotifications, setPushNotifications] = useState(true);
-  const [weeklyReports, setWeeklyReports] = useState(true);
+  const [emailNotifications, setEmailNotifications] = useState<boolean>(true);
+  const [smsNotifications, setSmsNotifications] = useState<boolean>(false);
+  const [pushNotifications, setPushNotifications] = useState<boolean>(true);
+  const [weeklyReports, setWeeklyReports] = useState<boolean>(true);
 
   // Tax Slabs State
-  const [regime, setRegime] = useState("Old");
-  const [taxSlabs, setTaxSlabs] = useState([
+  const [regime, setRegime] = useState<string>("Old");
+  const [taxSlabs, setTaxSlabs] = useState<TaxSlab[]>([
     { incomeRange: "0 - 2,50,000", taxRate: "0%", surcharge: "0%" },
     { incomeRange: "2,50,001 - 5,00,000", taxRate: "5%", surcharge: "0%" },
     { incomeRange: "5,00,001 - 10,00,000", taxRate: "20%", surcharge: "0%" },
@@ -22,11 +33,11 @@ function Settings() {
   ]);
 
   // Admin Roles State
-  const [superAdminEmail] = useState("superadmin@domytaxes.in");
-  const [supportAdminEmailMain] = useState("support@domytaxes.in");
-  const [adminEmail, setAdminEmail] = useState("");
-  const [supportAdminEmail, setSupportAdminEmail] = useState("");
-  const [adminList, setAdminList] = useState([
+  const [superAdminEmail] = useState<string>("superadmin@domytaxes.in");
+  const [supportAdminEmailMain] = useState<string>("support@domytaxes.in");
+  const [adminEmail, setAdminEmail] = useState<string>("");
+  const [supportAdminEmail, setSupportAdminEmail] = useState<string>("");
+  const [adminList, setAdminList] = useState<Admin[]>([
     { type: "Admin", email: "admin@domytaxes.in" },
     { type: "Support Admin", email: "support@domytaxes.in" },
   ]);
@@ -47,7 +58,7 @@ function Settings() {
     alert("Settings saved!");
   };
 
-  const handleDeleteSlab = (index) => {
+  const handleDeleteSlab = (index: number) => {
     setTaxSlabs(taxSlabs.filter((_, i) => i !== index));
   };
 

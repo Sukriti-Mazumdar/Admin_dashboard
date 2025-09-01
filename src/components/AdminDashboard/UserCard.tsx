@@ -1,7 +1,15 @@
 import React from "react";
 import "./UserCard.css";
 
-function UserCard({ name, email, phone, price, filingType }) {
+interface UserCardProps {
+  name: string;
+  email: string;
+  phone: string;
+  price: string;
+  filingType: string;
+}
+
+function UserCard({ name, email, phone, price, filingType }: UserCardProps) {
   return (
     <div className="user-card">
       <div className="user-info">

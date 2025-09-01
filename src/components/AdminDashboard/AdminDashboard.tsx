@@ -10,8 +10,12 @@ import Operators from "../Operators";
 import { FaUser, FaUsers, FaClock, FaFileAlt } from "react-icons/fa";
 import "./AdminDashboard.css";
 
-function AdminDashboard({ onLogout }) {
-  const [activePage, setActivePage] = useState("dashboard");
+interface AdminDashboardProps {
+  onLogout: () => void;
+}
+
+function AdminDashboard({ onLogout }: AdminDashboardProps) {
+  const [activePage, setActivePage] = useState<string>("dashboard");
 
   return (
     <div className="page-wrap">

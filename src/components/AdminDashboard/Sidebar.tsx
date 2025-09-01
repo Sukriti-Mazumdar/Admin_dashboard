@@ -1,14 +1,20 @@
 import React from "react";
-import { 
-  FaTachometerAlt, 
-  FaFileAlt, 
-  FaUsers, 
-  FaCog, 
-  FaSignOutAlt 
+import {
+  FaTachometerAlt,
+  FaFileAlt,
+  FaUsers,
+  FaCog,
+  FaSignOutAlt
 } from "react-icons/fa";
 import "./Sidebar.css";
 
-function Sidebar({ onMenuClick, activePage, onLogout }) {
+interface SidebarProps {
+  onMenuClick: (page: string) => void;
+  activePage: string;
+  onLogout: () => void;
+}
+
+function Sidebar({ onMenuClick, activePage, onLogout }: SidebarProps) {
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
@@ -16,29 +22,29 @@ function Sidebar({ onMenuClick, activePage, onLogout }) {
       </div>
 
       <nav className="sidebar-nav">
-        <button 
-          className={`nav-btn ${activePage === "dashboard" ? "active" : ""}`} 
+        <button
+          className={`nav-btn ${activePage === "dashboard" ? "active" : ""}`}
           onClick={() => onMenuClick("dashboard")}
         >
           <FaTachometerAlt className="icon" /> Dashboard
         </button>
 
-        <button 
-          className={`nav-btn ${activePage === "allFilings" ? "active" : ""}`} 
+        <button
+          className={`nav-btn ${activePage === "allFilings" ? "active" : ""}`}
           onClick={() => onMenuClick("allFilings")}
         >
           <FaFileAlt className="icon" /> All Filings
         </button>
 
-        <button 
-          className={`nav-btn ${activePage === "operators" ? "active" : ""}`} 
+        <button
+          className={`nav-btn ${activePage === "operators" ? "active" : ""}`}
           onClick={() => onMenuClick("operators")}
         >
           <FaUsers className="icon" /> Operators
         </button>
 
-        <button 
-          className={`nav-btn ${activePage === "settings" ? "active" : ""}`} 
+        <button
+          className={`nav-btn ${activePage === "settings" ? "active" : ""}`}
           onClick={() => onMenuClick("settings")}
         >
           <FaCog className="icon" /> Settings

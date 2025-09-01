@@ -1,8 +1,20 @@
 import React from "react";
 import "./Operators.css";
 
+interface Operator {
+  initials: string;
+  name: string;
+  status: string;
+  experience: number;
+  rating: number;
+  speciality: string;
+  tasksDone: number;
+  totalTasks: number;
+  filings: number;
+}
+
 const Operators = () => {
-  const operators = [
+  const operators: Operator[] = [
     {
       initials: "CRG",
       name: "Rajesh Gupta",
@@ -96,6 +108,7 @@ const Operators = () => {
             type="text"
             placeholder="Search by client name..."
             className="search-input"
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {}}
           />
         </div>
         <div className="filter-tabs">
@@ -107,7 +120,7 @@ const Operators = () => {
 
       {/* Operator Cards Grid */}
       <div className="operators-grid">
-        {operators.map((op, index) => (
+        {operators.map((op: Operator, index: number) => (
           <div className="operator-card" key={index}>
             <div className="operator-header">
               <div className="operator-avatar">{op.initials}</div>

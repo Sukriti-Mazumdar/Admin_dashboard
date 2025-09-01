@@ -1,6 +1,21 @@
 import React, { useState, useMemo } from "react";
 import "./AllFilings.css";
 
+interface Filing {
+  id: number;
+  client: string;
+  email: string;
+  phone: string;
+  filingYear: string;
+  itr: string;
+  status: string;
+  progress: number;
+  operator: string | null;
+  priority: string;
+  lastUpdated: string;
+  amount: string;
+}
+
 const TABS = [
   { key: "all", label: "All", icon: "📋" },
   { key: "waiting", label: "Waiting for Operator", icon: "⏳" },
@@ -9,7 +24,7 @@ const TABS = [
   { key: "completed", label: "Completed", icon: "✅" },
 ];
 
-const filingsData = [
+const filingsData: Filing[] = [
   {
     id: 1,
     client: "Arpita Bagchi",
@@ -125,11 +140,11 @@ const filingsData = [
 ];
 
 function AllFilings() {
-  const [activeTab, setActiveTab] = useState("all");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [sortBy, setSortBy] = useState("client");
-  const [sortOrder, setSortOrder] = useState("asc");
+  const [activeTab, setActiveTab] = useState<string>("all");
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [sortBy, setSortBy] = useState<string>("client");
+  const [sortOrder, setSortOrder] = useState<string>("asc");
   const itemsPerPage = 6;
 
   // Filter and sort filings
@@ -150,15 +165,15 @@ function AllFilings() {
 
     // Sorting
     filtered.sort((a, b) => {
-      let aValue = a[sortBy];
-      let bValue = b[sortBy];
-      
+      let aValue: any = a[sortBy as keyof Filing];
+      let bValue: any = b[sortBy as keyof Filing];
+
       if (sortBy === "priority") {
-        const priorityOrder = { "High": 3, "Medium": 2, "Low": 1 };
+        const priorityOrder: { [key: string]: number } = { "High": 3, "Medium": 2, "Low": 1 };
         aValue = priorityOrder[aValue];
         bValue = priorityOrder[bValue];
       }
-      
+
       if (sortOrder === "asc") {
         return aValue > bValue ? 1 : -1;
       } else {
@@ -178,7 +193,7 @@ function AllFilings() {
 
   // Count for each tab
   const tabCounts = useMemo(() => {
-    const counts = { all: filingsData.length };
+    const counts: { [key: string]: number } = { all: filingsData.length };
     TABS.forEach(({ key }) => {
       if (key !== "all") {
         counts[key] = filingsData.filter((f) => f.status === key).length;
@@ -187,21 +202,21 @@ function AllFilings() {
     return counts;
   }, []);
 
-  const handleTabClick = (key) => {
+  const handleTabClick = (key: string) => {
     setActiveTab(key);
     setCurrentPage(1);
   };
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
     setCurrentPage(1);
   };
 
-  const handlePageClick = (page) => {
+  const handlePageClick = (page: number) => {
     setCurrentPage(page);
   };
 
-  const handleSort = (field) => {
+  const handleSort = (field: string) => {
     if (sortBy === field) {
       setSortOrder(sortOrder === "asc" ? "desc" : "asc");
     } else {
@@ -210,7 +225,7 @@ function AllFilings() {
     }
   };
 
-  const getPriorityColor = (priority) => {
+  const getPriorityColor = (priority: string) => {
     switch (priority) {
       case "High": return "#ef4444";
       case "Medium": return "#f59e0b";
@@ -219,7 +234,7 @@ function AllFilings() {
     }
   };
 
-  const getStatusIcon = (status) => {
+  const getStatusIcon = (status: string) => {
     switch (status) {
       case "waiting": return "⏳";
       case "assigned": return "👤";
@@ -335,7 +350,7 @@ function AllFilings() {
           <tbody>
             {paginatedFilings.length === 0 ? (
               <tr>
-                <td colSpan="8" className="no-data">
+                <td colSpan={8} className="no-data">
                   <div className="no-data-content">
                     <span className="no-data-icon">📭</span>
                     <p>No filings found matching your criteria.</p>
@@ -426,7 +441,7 @@ function AllFilings() {
           
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
             <button
-              key={page}
+              key={page.toString()}
               className={`page-btn ${currentPage === page ? "active" : ""}`}
               onClick={() => handlePageClick(page)}
             >

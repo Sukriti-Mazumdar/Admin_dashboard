@@ -4,7 +4,11 @@ import { FaEnvelope, FaLock, FaEye, FaEyeSlash, FaQuestionCircle, FaBell, FaCog,
 import { FaGoogle, FaFacebook, FaApple } from 'react-icons/fa';
 import './LoginPage.css';
 
-function LoginPage({ onLogin }) {
+interface LoginPageProps {
+  onLogin: () => void;
+}
+
+function LoginPage({ onLogin }: LoginPageProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,11 +17,11 @@ function LoginPage({ onLogin }) {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle login logic here
+
     console.log('Login attempt:', { email, password });
-    
+
     // For demo purposes, accept any email/password combination
     if (email && password) {
       onLogin();
@@ -67,7 +71,7 @@ function LoginPage({ onLogin }) {
                     id="email"
                     placeholder="email@gmail.com"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                     className="form-input"
                     required
                   />

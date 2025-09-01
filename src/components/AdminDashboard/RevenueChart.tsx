@@ -9,7 +9,12 @@ import {
   Tooltip,
 } from "recharts";
 
-const data = [
+interface DataPoint {
+  month: string;
+  revenue: number;
+}
+
+const data: DataPoint[] = [
   { month: "01", revenue: 50000 },
   { month: "02", revenue: 100000 },
   { month: "03", revenue: 60000 },
@@ -30,9 +35,9 @@ function RevenueChart() {
           </linearGradient>
         </defs>
         <XAxis dataKey="month" />
-        <YAxis tickFormatter={(value) => value.toLocaleString()} />
+        <YAxis tickFormatter={(value: number) => value.toLocaleString()} />
         <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip formatter={(value) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(value)} />
+        <Tooltip formatter={(value: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(value)} />
         <Area
           type="monotone"
           dataKey="revenue"

@@ -2,7 +2,11 @@ import React from "react";
 import { FaBell, FaCog, FaQuestionCircle, FaChevronDown, FaPlus } from "react-icons/fa";
 import "./Topbar.css";
 
-function Topbar({ activePage }) {
+interface TopbarProps {
+  activePage: string;
+}
+
+function Topbar({ activePage }: TopbarProps) {
   return (
     <>
       <header className="topbar">
